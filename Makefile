@@ -1,7 +1,7 @@
 # ----- PROJECT INFO -----
 
 PROJ_NAME := liberr
-VER := 1.0
+VER := 1.1
 
 # ----- COMPILER CONFIGURATION -----
 
@@ -32,7 +32,7 @@ build/obj/err.o: err.c err.h
 	uninstall
 
 all: build/lib/liberr.so
-	@echo Built ${PROJ_NAME} version ${VER}
+	@echo "Built ${PROJ_NAME} version ${VER}"
 
 clean:
 	@rm -rf build

@@ -14,6 +14,8 @@ Void init_err(Err *err) {
 }
 
 Void throw(Err *err, ErrCode code, U32 ln, Ch *file, Ch *msg, ...) {
+    if (err == NIL)
+        return;
     err->code       = code;
     err->ln         = ln;
     strncpy(err->file, file, ERR_FILE_BUF_SZ - 1);
