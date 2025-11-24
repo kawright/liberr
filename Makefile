@@ -9,7 +9,8 @@ CC := gcc
 CC_OPTS := \
 	-Wall \
 	-Werror \
-	-fpic
+	-fpic \
+	-g
 
 # ----- REAL TARGETS -----
 
@@ -18,7 +19,7 @@ build/lib/liberr.so: build/obj/err.o
 	@${CC} -shared -o $@ $<
 	@echo "Built target $@"
 
-build/obj/err.o: err.c err.h
+build/obj/err.o: err.c err.h Makefile
 	@mkdir -p build/obj
 	@${CC} ${CC_OPTS} -c -o $@ $<
 	@echo "Built target $@"
