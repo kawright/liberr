@@ -101,4 +101,7 @@ Void throw(Err *err, ErrCode code, U32 ln, Ch *file, Ch *msg, ...);
 'ErrCode_OK'). */
 Bool is_err(Err *err);
 
+/* Report an error to 'stderr'. */
+Void warn(Err *err);
+
 #endif

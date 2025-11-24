@@ -30,3 +30,8 @@ Void throw(Err *err, ErrCode code, U32 ln, Ch *file, Ch *msg, ...) {
 Bool is_err(Err *err) {
     return err->code != ErrCode_OK;
 }
+
+Void warn(Err *err) {
+    fprintf(stderr, "ERROR %d - (%s:%ld) - %s\n", err->code, err->file, err->ln,
+        err->msg);
+}
